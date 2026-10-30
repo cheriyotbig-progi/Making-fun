@@ -1,0 +1,305 @@
+body 
+/* =========================
+   LOVE UNFILTERED
+   MAIN STYLESHEET
+========================= */
+
+:root {
+  --ink: #302d29;
+  --muted: #69645d;
+  --paper: #f6f2e9;
+  --rust: #a44c37;
+  --line: #ded7ca;
+  --secondary: #eae4d7;
+  --closing: #dcd0bc;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--paper);
+  font-family: 'DM Sans', sans-serif;
+}
+
+.site-shell {
+  width: 100%;
+  overflow: hidden;
+}
+
+.serif,
+.hero-title,
+.section-title,
+.story-title {
+  font-family: 'Alegreya', serif;
+}
+
+/* HEADER */
+
+.canva-header {
+  background: var(--paper);
+}
+
+.canva-header a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+.nav-link {
+  font-size: 14px;
+  font-weight: 600;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: var(--rust);
+}
+
+/* GENERAL TEXT */
+
+.eyebrow {
+  color: var(--rust);
+  text-transform: uppercase;
+  letter-spacing: .16em;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.hero-description,
+.about-copy,
+.stories-intro,
+.story-copy,
+.reflection-intro,
+.reflection-copy {
+  color: var(--muted);
+}
+
+.hero-title {
+  font-size: clamp(3.5rem, 7vw, 7.4rem);
+  line-height: .94;
+  letter-spacing: -.055em;
+  font-weight: 500;
+}
+
+.section-title {
+  font-size: clamp(2.7rem, 5vw, 5.2rem);
+  line-height: 1.02;
+  letter-spacing: -.045em;
+  font-weight: 500;
+}
+
+.story-title {
+  font-size: clamp(1.85rem, 2.5vw, 2.5rem);
+  line-height: 1.08;
+  font-weight: 600;
+}
+
+/* HERO SECTION */
+
+.hero-section {
+  background: var(--paper);
+}
+
+.hero-photo {
+  min-height: 530px;
+  height: min(660px, 65vw);
+}
+
+.hero-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-note {
+  color: #877b6e;
+}
+
+/* BUTTON */
+
+.action-link {
+  background: var(--rust);
+  color: white;
+  transition: transform .2s ease,
+              background .2s ease;
+}
+
+.action-link:hover {
+  transform: translateY(-2px);
+  background: #823a2c;
+}
+
+/* ABOUT SECTION */
+
+.about-section {
+  background: var(--secondary);
+  border-color: var(--line);
+}
+
+.about-copy {
+  color: #575148;
+  font-size: 19px;
+}
+
+/* STORIES SECTION */
+
+.stories-section {
+  background: var(--paper);
+}
+
+.story-card {
+  background: var(--paper);
+}
+
+.story-image {
+  aspect-ratio: 4 / 4.5;
+  object-fit: cover;
+  width: 100%;
+  transition: transform .6s ease;
+}
+
+.story-card:hover .story-image {
+  transform: scale(1.045);
+}
+
+.story-copy {
+  font-size: 17px;
+}
+
+/* REFLECTION SECTION */
+
+.reflection-section {
+  background: var(--secondary);
+  border-color: var(--line);
+}
+
+.reflection-intro {
+  color: #575148;
+}
+
+.reflection-button {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--rust);
+  border-radius: 999px;
+  padding: 12px 20px;
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background .2s ease,
+              color .2s ease,
+              transform .2s ease;
+}
+
+.reflection-button:hover {
+  transform: translateY(-2px);
+}
+
+.reflection-button[aria-pressed="true"] {
+  background: var(--rust);
+  color: white;
+}
+
+.reflection-card {
+  background: var(--paper);
+}
+
+.reflection-copy {
+  color: #575148;
+  font-size: 17px;
+}
+
+/* CLOSING SECTION */
+
+.closing-section {
+  background: var(--closing);
+}
+
+.closing-copy {
+  font-size: 19px;
+  color: #514b43;
+}
+
+.closing-link {
+  display: inline-block;
+  border-bottom: 2px solid;
+  padding-bottom: 4px;
+  text-decoration: none;
+  color: #8d4636;
+  font-weight: 700;
+}
+
+.closing-link:hover {
+  color: var(--rust);
+}
+
+/* FOOTER */
+
+.site-footer {
+  background: var(--ink);
+}
+
+.footer-name {
+  font-size: 17px;
+  color: var(--paper);
+}
+
+.footer-note {
+  color: #d8cfc0;
+  font-size: 13px;
+}
+
+/* ACCESSIBILITY */
+
+:focus-visible {
+  outline: 3px solid var(--rust);
+  outline-offset: 4px;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 767px) {
+
+  .hero-photo {
+    height: 430px;
+    min-height: 0;
+  }
+
+  .hero-title {
+    font-size: clamp(3.5rem, 13vw, 5.8rem);
+  }
+
+  .section-title {
+    font-size: clamp(2.7rem, 11vw, 4rem);
+  }
+
+  .reflection-button {
+    font-size: 14px;
+  }
+
+}
+
+/* REDUCED MOTION */
+
+@media (prefers-reduced-motion: reduce) {
+
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: .01ms !important;
+    animation-duration: .01ms !important;
+  }
+
+}

@@ -1,0 +1,43 @@
+console.log('Hello World!');
+
+/* =========================
+   LOVE UNFILTERED
+   JAVASCRIPT
+========================= */
+
+// Select all reflection buttons
+const reflectionButtons = document.querySelectorAll(
+  '[data-panel]'
+);
+
+// Select all reflection content panels
+const reflectionPanels = document.querySelectorAll(
+  '#reflection-card > div'
+);
+
+// Add click functionality
+reflectionButtons.forEach(button => {
+
+  button.addEventListener('click', () => {
+
+    // Update active button
+    reflectionButtons.forEach(item => {
+
+      item.setAttribute(
+        'aria-pressed',
+        String(item === button)
+      );
+
+    });
+
+    // Show the selected reflection
+    reflectionPanels.forEach(panel => {
+
+      panel.hidden =
+        panel.id !== button.dataset.panel;
+
+    });
+
+  });
+
+});
